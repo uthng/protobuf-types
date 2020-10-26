@@ -1,0 +1,21 @@
+// vim: ts=2 et sts=2 sw=2
+syntax = "proto3";
+
+package users;
+
+// Use the following line if we want to generate *.pb.go in a folder
+// whose the name is not the same as the package
+option go_package = "genpb/users;users";
+
+// annotations.proto is needed for the use of grpc-gateway
+/*import "google/api/annotations.proto";*/
+// for Timestamp in the message fields
+/*import "google/protobuf/timestamp.proto";*/
+
+message User {
+	int32 id = 1
+	int64 age = 2;
+	string name = 3;
+        // @inject_tag: db:"created_at"
+        google.protobuf.Timestamp created_at = 4;
+}
