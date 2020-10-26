@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package null;
+
+option go_package = "types/null;null";
+
+message NullInt32 {
+  int32 value = 1;
+  bool valid = 2;
+}
+
+message NullInt64 {
+  float value = 1;
+  bool valid = 2;
+}

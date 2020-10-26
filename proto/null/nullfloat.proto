@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package null;
+
+option go_package = "types/null;null";
+
+message NullFloat64 {
+  float value = 1;
+  bool valid = 2;
+}
