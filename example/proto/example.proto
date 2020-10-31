@@ -10,12 +10,13 @@ option go_package = "genpb/users;users";
 // annotations.proto is needed for the use of grpc-gateway
 /*import "google/api/annotations.proto";*/
 // for Timestamp in the message fields
-/*import "google/protobuf/timestamp.proto";*/
+import "google/protobuf/timestamp.proto";
+
+import "proto/null/nullint.proto";
 
 message User {
-	int32 id = 1
-	int64 age = 2;
-	string name = 3;
-        // @inject_tag: db:"created_at"
-        google.protobuf.Timestamp created_at = 4;
+	uthng.protobuf.null.Int64 age = 1;
+	string lastname = 2;
+	string firstname = 3;
+  google.protobuf.Timestamp created = 4;
 }

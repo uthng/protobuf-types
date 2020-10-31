@@ -1,17 +1,18 @@
 package main
 
 import (
-	"fmt"
+	//"fmt"
 	"io/ioutil"
-	"time"
+	//"time"
 
 	"github.com/jmoiron/sqlx"
 	_ "github.com/lib/pq"
-
-	"github.com/uthng/protobuf-types/types/null"
+	pb "github.com/uthng/protobuf-types/example/genpb/users"
+	_ "github.com/uthng/protobuf-types/types/null"
 )
 
 func main() {
+	var result *pb.User
 
 	// Create DB pool
 	db, err := sqlx.Open("postgres", "host=localhost port=5432 user=postgres password=mobiz dbname=test-sqlx sslmode=disable")
@@ -30,10 +31,10 @@ func main() {
 		panic(err.Error())
 	}
 
-	sqlStmt := "SELECT * FROM users"
+	sqlStmt := "SELECT * FROM users LIMIT 1"
 
-	err := db.Select(&result, sqlStmt)
+	err = db.Get(&result, sqlStmt)
 	if err != nil {
-		return result, err
+		panic(err.Error())
 	}
 }

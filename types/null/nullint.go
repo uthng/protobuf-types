@@ -7,7 +7,7 @@ import (
 
 ///////// NullInt32 ///////////////////////
 // Scan implements Scanner interface for database driver
-func (n *NullInt32) Scan(value interface{}) error {
+func (n *Int32) Scan(value interface{}) error {
 	var err error
 
 	if value == nil {
@@ -16,7 +16,7 @@ func (n *NullInt32) Scan(value interface{}) error {
 	}
 
 	n.Valid = true
-	v.Value, err = cast.ToInt32E(value)
+	n.Value, err = cast.ToInt32E(value)
 	if err != nil {
 		return err
 	}
@@ -25,7 +25,7 @@ func (n *NullInt32) Scan(value interface{}) error {
 }
 
 // Value implements the driver Valuer interface for database driver
-func (n NullInt32) Value() (driver.Value, error) {
+func (n Int32) Value() (driver.Value, error) {
 	if !n.Valid {
 		return nil, nil
 	}
@@ -34,7 +34,7 @@ func (n NullInt32) Value() (driver.Value, error) {
 
 //////////// NullInt64 ///////////////////////
 // Scan implements Scanner interface for database driver
-func (n *NullInt64) Scan(value interface{}) error {
+func (n *Int64) Scan(value interface{}) error {
 	var err error
 
 	if value == nil {
@@ -43,7 +43,7 @@ func (n *NullInt64) Scan(value interface{}) error {
 	}
 
 	n.Valid = true
-	v.Value, err = cast.ToInt64E(value)
+	n.Value, err = cast.ToInt64E(value)
 	if err != nil {
 		return err
 	}
@@ -52,7 +52,7 @@ func (n *NullInt64) Scan(value interface{}) error {
 }
 
 // Value implements the driver Valuer interface for database driver
-func (n NullInt64) Value() (driver.Value, error) {
+func (n Int64) Value() (driver.Value, error) {
 	if !n.Valid {
 		return nil, nil
 	}
