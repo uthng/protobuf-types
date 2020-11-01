@@ -13,10 +13,11 @@ option go_package = "genpb/users;users";
 import "google/protobuf/timestamp.proto";
 
 import "proto/null/nullint.proto";
+import "proto/null/nullstring.proto";
 
 message User {
 	uthng.protobuf.null.Int64 age = 1;
-	string lastname = 2;
-	string firstname = 3;
+	uthng.protobuf.null.String lastname = 2;
+	uthng.protobuf.null.String firstname = 3;
   google.protobuf.Timestamp created = 4;
 }

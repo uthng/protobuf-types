@@ -1,7 +1,7 @@
 package main
 
 import (
-	//"fmt"
+	"fmt"
 	"io/ioutil"
 	//"time"
 
@@ -12,7 +12,7 @@ import (
 )
 
 func main() {
-	var result *pb.User
+	var result pb.User
 
 	// Create DB pool
 	db, err := sqlx.Open("postgres", "host=localhost port=5432 user=postgres password=mobiz dbname=test-sqlx sslmode=disable")
@@ -37,4 +37,6 @@ func main() {
 	if err != nil {
 		panic(err.Error())
 	}
+
+	fmt.Printf("%+v\n", result)
 }

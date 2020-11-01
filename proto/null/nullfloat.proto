@@ -5,6 +5,6 @@ package uthng.protobuf.null;
 option go_package = "github.com/uthng/protobuf-types/types/null;null";
 
 message Float64 {
-  float value = 1;
+  float val = 1;
   bool valid = 2;
 }
