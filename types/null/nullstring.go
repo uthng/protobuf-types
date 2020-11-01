@@ -2,7 +2,6 @@ package null
 
 import (
 	"database/sql/driver"
-	"fmt"
 	"github.com/spf13/cast"
 )
 
@@ -11,7 +10,6 @@ func (n *String) Scan(value interface{}) error {
 	var err error
 
 	if value == nil {
-		fmt.Println("lskdjfkslfjlsdjlsj")
 		n.Val, n.Valid = "null", false
 		return nil
 	}
