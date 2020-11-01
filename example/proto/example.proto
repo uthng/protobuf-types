@@ -12,12 +12,12 @@ option go_package = "genpb/users;users";
 // for Timestamp in the message fields
 import "google/protobuf/timestamp.proto";
 
-import "proto/null/nullint.proto";
-import "proto/null/nullstring.proto";
+import "proto/sql/nullint.proto";
+import "proto/sql/nullstring.proto";
 
 message User {
-	uthng.protobuf.null.Int64 age = 1;
-	uthng.protobuf.null.String lastname = 2;
-	uthng.protobuf.null.String firstname = 3;
+	uthng.protobuf.sql.NullInt64 age = 1;
+	uthng.protobuf.sql.NullString lastname = 2;
+	uthng.protobuf.sql.NullString firstname = 3;
   google.protobuf.Timestamp created = 4;
 }

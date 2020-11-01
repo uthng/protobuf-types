@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package uthng.protobuf.sql;
+
+option go_package = "github.com/uthng/protobuf-types/types/sql;sql";
+
+message NullBool {
+  bool val = 1;
+  bool valid = 2;
+}

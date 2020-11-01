@@ -8,7 +8,7 @@ import (
 	"github.com/jmoiron/sqlx"
 	_ "github.com/lib/pq"
 	pb "github.com/uthng/protobuf-types/example/genpb/users"
-	_ "github.com/uthng/protobuf-types/types/null"
+	_ "github.com/uthng/protobuf-types/types/sql"
 )
 
 func main() {
